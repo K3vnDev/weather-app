@@ -10,6 +10,7 @@
   height: 300px;
   border-radius: 10px;
   background-size: cover;
+  margin: 0 auto;
 }
 .card-wrapper.day{
   background: var(--day-sky-image);
@@ -19,7 +20,6 @@
   background: var(--night-sky-image);
   background-position: bottom right;
 }
-
 
 .card{
   font-family: system-ui;
@@ -122,3 +122,101 @@
   font-size: 20px;
   text-align: center;
 }
+
+@media screen and (max-width: 650px) {
+  .card-wrapper{
+    height: 470px;
+    width: 320px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .card-wrapper.night{
+    background: var(--night-sky-image);
+    background-position: top right;
+  }
+  .card-wrapper.day{
+    background: var(--day-sky-image);
+    background-position: bottom right;
+  }
+
+  .card{
+    flex-direction: column-reverse;   
+    padding: 30px 40px 40px 40px;
+    background: 
+    linear-gradient(
+      -5deg, #00020c -25%,
+      var(--darker-blue) 54%, var(--dark-blue) 54.25%, 
+      var(--dark-blue) 60%, rgb(0 0 0 / .2) 60.25%
+    );
+    box-shadow: 0 0 75px #03142f96;
+    border-radius: 8px;
+  }
+
+  .right-side{
+    width: 100%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+
+  .right-side img{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    right: 0;
+    top: 30px;
+  }
+  .temp-container h2{
+    position: absolute;
+    font-size: 75px;
+    letter-spacing: -3px;
+    left: 0;
+  }
+  .temp-container p{
+    position: absolute;
+    font-size: 35px;
+    left: 90px;
+    opacity: .7;
+  }
+  .contition{
+    font-size: 22px;
+    width: 150px;
+    font-weight: 600;
+    text-align: start;
+  
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+  }
+
+  .left-side{
+    width: 100%;
+    
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .left-side .date-and-time{
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 3px;
+  }
+  .left-side .location{
+    font-size: 19px;
+    max-width: 250px;
+    font-weight: 400;
+  }
+  
+  .left-side h5{
+    font-size: 15px;
+    margin-top: 3px;
+    opacity: .75;
+    font-weight: 300;
+  }
+}
+
