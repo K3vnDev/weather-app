@@ -1,0 +1,124 @@
+:root{
+  --darker-blue: #03142f;
+  --dark-blue: #051a3d;
+  --night-sky-image: url(../assets/night-sky.webp);
+  --day-sky-image: url(../assets/day-sky.jpg);
+}
+
+.card-wrapper{
+  width: 540px;
+  height: 300px;
+  border-radius: 10px;
+  background-size: cover;
+}
+.card-wrapper.day{
+  background: var(--day-sky-image);
+  background-position: bottom right;
+}
+.card-wrapper.night{
+  background: var(--night-sky-image);
+  background-position: bottom right;
+}
+
+
+.card{
+  font-family: system-ui;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  display: flex;
+  color: white;
+  
+  background: 
+  linear-gradient(
+    105deg, #00020c -25%,
+    var(--darker-blue) 54%, var(--dark-blue) 54.25%, 
+    var(--dark-blue) 60%, rgb(0 0 0 / .2) 60.25%
+  );
+  box-shadow: 0 0 75px #03142f96;
+  border-radius: 8px;
+}
+
+.left-side{
+  width: 50%;
+  height: 100%;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.left-side .date-and-time{
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+.left-side .location{
+  font-size: 21px;
+  max-width: 250px;
+  font-weight: 400;
+}
+
+.left-side h5{
+  font-size: 15px;
+  margin-top: 3px;
+  opacity: .75;
+  font-weight: 300;
+}
+
+.right-side{
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.temp-container{
+  height: 100px;
+  width: 225px;
+  position: relative;
+}
+
+.right-side img{
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  right: 0;
+  top: 0;
+}
+.temp-container h2{
+  position: absolute;
+  font-size: 75px;
+  letter-spacing: -3px;
+  right: 35px;
+}
+
+.temp-container p{
+  position: absolute;
+  font-size: 35px;
+  right: 0;
+  top: 18px;
+  opacity: .7;
+}
+
+.contition{
+  font-size: 22px;
+  width: 150px;
+  font-weight: 600;
+  text-align: end;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+}
+
+.error-msg{
+  font-family: system-ui;
+  color: #e98686;
+  font-size: 20px;
+  text-align: center;
+}
